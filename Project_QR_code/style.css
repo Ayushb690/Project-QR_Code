@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Niconne&display=swap');
+
+/* ---------- Global Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+}
+
+/* ---------- Body ---------- */
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(pink, black);
+}
+
+/* ---------- Centering Area ---------- */
+header {
+    min-height: calc(100vh - 56px); /* Bootstrap navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Main White Box ---------- */
+.wrapper {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: 260px;
+
+    padding: 20px 24px;
+    border-radius: 8px;
+
+    transition: height 0.3s ease;
+}
+
+/* Expand when QR appears */
+.wrapper.active {
+    height: 630px;
+}
+
+/* ---------- Text ---------- */
+.wrapper p {
+    margin-top: 5px;
+    color: gray;
+    font-size: 18px;
+}
+
+/* ---------- Form ---------- */
+.wrapper .form {
+    margin: 20px 0;
+}
+
+.form input,
+.form button {
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Input */
+.form input {
+    font-size: 18px;
+    padding: 0 10px;
+    border: 1px solid #999;
+}
+
+/* Button */
+.form button {
+    margin-top: 12px;
+    background-color:#999;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+}
+.form button:hover{
+    color:#999;
+    border: solid 0.4px #999;
+    background: white;
+    transition: 0.5s ease;
+}
+
+/* ---------- QR Box ---------- */
+.wrapper .qr-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Show QR */
+.wrapper.active .qr-code {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease;
+}
+
+/* QR Image */
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
